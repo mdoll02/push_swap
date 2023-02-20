@@ -6,7 +6,7 @@
 #    By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 09:27:16 by mdoll             #+#    #+#              #
-#    Updated: 2023/02/20 12:26:16 by mdoll            ###   ########.fr        #
+#    Updated: 2023/02/20 14:29:57 by mdoll            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ CFLAGS	:= -Wall -Wextra -Werror
 SRCS	:=	push_swap.c
 
 OBJS	:= $(SRCS:.c=.o)
+
+NORM	:= $(shell norminette | grep KO | wc -l)
 
 RM		:= rm -f
 
@@ -43,6 +45,7 @@ $(NAME): $(OBJS)
 	@ $(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft.a
 	@ echo "${g}finished compiling.${end}"
 # @ echo "${bl}Use: ./pipex file1 cmd1 cmd2 file2 to run the progam${end}"
+	@ echo $(NORM) "norm errors"
 
 clean:
 	@${RM} $(OBJS)

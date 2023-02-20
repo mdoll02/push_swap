@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/20 13:54:33 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/20 15:45:38 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,55 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc == 1 || check_input(argv) == 1)
+	if (argc == 1 || check_input(argv, argc) == 1)
 	{
 		write(STDERR_FILENO, "Error\n", 6);
 		exit (1);
 	}
-	argc++;
 	return (0);
 }
 
-int	check_input(char **argv)
+static int	is_valid_number(char *number)
+{
+	int		is_nb;
+
+	is_nb = 0;
+	if (number[is_nb] == '-')
+		is_nb++;
+	while (number[is_nb])
+	{
+		if (number[is_nb] < '0' || number[is_nb] > '9')
+		{
+			return (1);
+		}
+		is_nb++;
+	}
+	return (0);
+}
+
+int	check_input(char **argv, int argc)
 {
 	int		i;
-	int		is_nb;
 	long	tmp;
+	char	**numbers;
 
 	i = 1;
-	while (argv[i])
+	if (argc == 2)
 	{
-		is_nb = 0;
-		if (argv[i][is_nb] == '-')
-			is_nb++;
-		while (argv[i][is_nb])
-		{
-			if (argv[i][is_nb] < '0' || argv[i][is_nb] > '9')
-			{
-				return (1);
-			}
-			is_nb++;
-		}
-		tmp = ft_atoi(argv[i]);
+		numbers = ft_split(argv[1], ' ');
+	}
+	else
+		numbers = argv;
+	while (numbers[i])
+	{
+		if (is_valid_number(numbers[i]) == 1)
+			return (1);
+		tmp = ft_atoi(numbers[i]);
 		if (tmp > INT32_MAX || tmp < INT32_MIN)
 			return (1);
 		i++;
 	}
+	if (argc == 2)
+		free(numbers);
 	return (0);
 }
