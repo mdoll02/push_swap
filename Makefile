@@ -6,7 +6,7 @@
 #    By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 09:27:16 by mdoll             #+#    #+#              #
-#    Updated: 2023/02/17 09:28:52 by mdoll            ###   ########.fr        #
+#    Updated: 2023/02/20 12:26:16 by mdoll            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ $(NAME): $(OBJS)
 	@ cp ./libft/libft.a .
 	@ $(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft.a
 	@ echo "${g}finished compiling.${end}"
-	@ echo "${bl}Use: ./pipex file1 cmd1 cmd2 file2 to run the progam${end}"
+# @ echo "${bl}Use: ./pipex file1 cmd1 cmd2 file2 to run the progam${end}"
 
 clean:
 	@${RM} $(OBJS)
