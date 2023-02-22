@@ -6,7 +6,7 @@
 #    By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 09:27:16 by mdoll             #+#    #+#              #
-#    Updated: 2023/02/20 14:29:57 by mdoll            ###   ########.fr        #
+#    Updated: 2023/02/22 14:41:55 by mdoll            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ NAME	:= push_swap
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror
 
-SRCS	:=	push_swap.c
+SRCS	:=	push_swap.c list_operations.c input_check.c swap.c test.c
 
 OBJS	:= $(SRCS:.c=.o)
 
-NORM	:= $(shell norminette | grep KO | wc -l)
+NORM	:= $(shell norminette | grep Error | grep c:)
 
 RM		:= rm -f
 
@@ -38,18 +38,17 @@ all:	${NAME}
 	@ $(CC) -c $(CFLAGS) $< -o ${<:.c=.o}
 
 $(NAME): $(OBJS)
-	@ ${RM} $(BONUS_OBJS)
-	@ echo "${r}compiling${end}"
+	@ echo "${r}compiling Libft${end}"
 	@ make all -C ./libft >/dev/null 2>&1
 	@ cp ./libft/libft.a .
+	@ echo "${bl}compiling program${end}"
 	@ $(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft.a
 	@ echo "${g}finished compiling.${end}"
-# @ echo "${bl}Use: ./pipex file1 cmd1 cmd2 file2 to run the progam${end}"
-	@ echo $(NORM) "norm errors"
+	@ echo "${bl}Use: ./push_swap 1 2 3 4 ... or \"1 2 3 4 ...\" to run the progam${end}"
+	@ echo "Norm error in: ${r}" $(NORM) "${end}"
 
 clean:
 	@${RM} $(OBJS)
-	@${RM} $(BONUS_OBJS)
 	@make clean -C ./libft
 	@ echo "${y}cl${bl}ea${p}ne${c}d!${end}"
 
