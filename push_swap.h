@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/22 14:41:32 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/23 11:31:59 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,19 @@ void	print_stack(t_stack *stack);
 int		ss(t_stack **stack_a, t_stack **stack_b);
 int		sb(t_stack **stack_b);
 int		sa(t_stack **stack_a);
+
+// Rotate
+// NEED TO ADD ERROR HANDLING
+
+int		ra(t_stack **stack);
+int		rb(t_stack **stack);
+int		rr(t_stack **stack_a, t_stack **stack_b);
+
+// Rervse Rotate
+// NEED TO ADD ERROR HANDLING
+
+int		rra(t_stack **stack);
+int		rrb(t_stack **stack);
+int		rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif
