@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/23 11:39:24 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/23 13:41:41 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 	rra(stack_a);
 	rra(stack_a);
 	rra(stack_a);
+	ra(stack_a);
 	print_stack(*stack_a);
 	return (0);
 }

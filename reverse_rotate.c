@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 11:30:09 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/23 11:38:55 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/23 13:40:51 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ static int	reverse_rotate(t_stack **stack)
 {
 	t_stack	*new_first;
 	t_stack	*new_second;
+	t_stack	*new_last;
 
 	new_second = *stack;
 	new_first = ft_lstlast(new_second);
+	new_last = *stack;
+	while (new_last->next->next != NULL)
+		new_last = new_last->next;
+	new_last->next = NULL;
 	ft_listadd_front(stack, new_first);
 	return (0);
 }
