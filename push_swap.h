@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/23 11:31:59 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/23 13:57:16 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,10 @@ int		rr(t_stack **stack_a, t_stack **stack_b);
 int		rra(t_stack **stack);
 int		rrb(t_stack **stack);
 int		rrr(t_stack **stack_a, t_stack **stack_b);
+
+// Push
+
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_b, t_stack **stack_a);
 
 #endif
