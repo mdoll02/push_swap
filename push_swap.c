@@ -6,17 +6,29 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 11:42:22 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 14:49:45 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
+
+void print_split(char **out)
+{
+	int i = 0;
+	while (out[i])
+	{
+		printf("%d:%s\n", i, out[i]);
+		i++;
+	}
+}
+
 
 int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
 
+	print_split(argv);
 	if (argc == 1 || check_input(argv, argc) == 1)
 	{
 		write(STDERR_FILENO, "Error\n", 6);
