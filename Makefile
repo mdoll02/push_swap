@@ -6,16 +6,26 @@
 #    By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 09:27:16 by mdoll             #+#    #+#              #
-#    Updated: 2023/02/27 09:26:54 by mdoll            ###   ########.fr        #
+#    Updated: 2023/02/27 10:48:20 by mdoll            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= push_swap
+
 CC		:= gcc
+
 CFLAGS	:= -Wall -Wextra -Werror
 
-SRCS	:=	push_swap.c utils/list_operations.c utils/input_check.c operations/swap.c \
-			operations/rotate.c operations/reverse_rotate.c operations/push.c
+UTILS   := utils/
+
+OPS		:= operations/
+
+SORT	:= sorting/
+
+SRCS	:=	push_swap.c \
+			$(UTILS)list_operations.c $(UTILS)input_check.c \
+			$(OPS)swap.c $(OPS)rotate.c $(OPS)reverse_rotate.c $(OPS)push.c \
+			$(SORT)start_sorting.c
 
 OBJS	:= $(SRCS:.c=.o)
 

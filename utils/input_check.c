@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:50:06 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 09:28:06 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 11:43:49 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ static int	is_valid_number(char *number)
 	return (0);
 }
 
-int	check_for_dupes(char **numbers, int argc)
+static int	check_for_dupes(char **numbers, int argc)
 {
 	int	i;
 	int	tmp;
 	int	j;
 	int	start;
 
-	start = 0;
+	start = 1;
 	if (argc == 2)
-		start = 1;
+		start = 0;
 	i = start;
 	while (numbers[i])
 	{
@@ -58,7 +58,7 @@ int	check_for_dupes(char **numbers, int argc)
 	return (0);
 }
 
-int	check_for_number(char **numbers, int argc)
+static int	check_for_number(char **numbers, int argc)
 {
 	int		i;
 	long	tmp;
@@ -78,6 +78,8 @@ int	check_for_number(char **numbers, int argc)
 	return (0);
 }
 
+// need to check for right oder
+
 int	check_input(char **argv, int argc)
 {
 	char	**numbers;
@@ -90,6 +92,8 @@ int	check_input(char **argv, int argc)
 	}
 	else
 		numbers = argv;
+	if (!*numbers)
+		return (1);
 	ret_number = check_for_number(numbers, argc);
 	ret_dupe = check_for_dupes(numbers, argc);
 	if (argc == 2)

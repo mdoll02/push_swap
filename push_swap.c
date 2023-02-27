@@ -6,11 +6,11 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 08:42:16 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 11:42:22 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./include/push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -30,10 +30,7 @@ int	main(int argc, char **argv)
 	print_stack(*stack_a);
 	write(1, "________________\n", 17);
 	print_stack(*stack_b);
-	pa(stack_a, stack_b);
-	ra(stack_a);
-	sa(stack_a);
-	rra(stack_a);
+	begin_sorting(stack_a, stack_b);
 	print_stack(*stack_a);
 	write(1, "________________\n", 17);
 	print_stack(*stack_b);
@@ -62,4 +59,23 @@ void	fill_stack(t_stack **stack, char **argv, int argc)
 	}
 	if (argc == 2)
 		free(numbers);
+}
+
+void	print_stack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	if (tmp == NULL)
+		ft_putendl_fd("(NULL)", 1);
+	else
+	{
+		while (tmp)
+		{
+			write(1, "|", 1);
+			ft_putnbr_fd(tmp->value, 1);
+			write(1, "|\n", 2);
+			tmp = tmp->next;
+		}
+	}
 }

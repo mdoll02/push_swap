@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:03:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 09:27:56 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 14:01:40 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,21 +63,19 @@ t_stack	*ft_lstlast(t_stack *head)
 	return (tmp);
 }
 
-void	print_stack(t_stack *stack)
+int	number_of_elements(t_stack **stack)
 {
-	t_stack	*tmp;
+	int		number_count;
+	t_stack	*head;
 
-	tmp = stack;
-	if (tmp == NULL)
-		ft_putendl_fd("(NULL)", 1);
-	else
+	if (*stack == NULL)
+		return (0);
+	number_count = 1;
+	head = *stack;
+	while (head->next != NULL)
 	{
-		while (tmp)
-		{
-			write(1, "|", 1);
-			ft_putnbr_fd(tmp->value, 1);
-			write(1, "|\n", 2);
-			tmp = tmp->next;
-		}
+		number_count++;
+		head = head->next;
 	}
+	return (number_count);
 }
