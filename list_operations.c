@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:03:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/22 12:44:40 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/26 15:22:40 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,16 @@ void	print_stack(t_stack *stack)
 	t_stack	*tmp;
 
 	tmp = stack;
-	while (tmp)
+	if (tmp == NULL)
+		ft_putendl_fd("(NULL)", 1);
+	else
 	{
-		write(1, "|", 1);
-		ft_putnbr_fd(tmp->value, 1);
-		write(1, "|\n", 2);
-		tmp = tmp->next;
+		while (tmp)
+		{
+			write(1, "|", 1);
+			ft_putnbr_fd(tmp->value, 1);
+			write(1, "|\n", 2);
+			tmp = tmp->next;
+		}
 	}
 }
