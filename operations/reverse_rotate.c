@@ -6,11 +6,11 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 11:30:09 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/23 13:40:51 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 09:28:19 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../include/push_swap.h"
 
 // NEED TO ADD ERROR HANDLING
 static int	reverse_rotate(t_stack **stack)

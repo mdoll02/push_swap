@@ -6,11 +6,11 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:50:06 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 09:07:04 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 09:28:06 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../include/push_swap.h"
 
 static int	is_valid_number(char *number)
 {

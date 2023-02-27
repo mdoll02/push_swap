@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 08:45:14 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 09:28:39 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include <stdio.h> // remove when finished --> need to debug perror / fprintf
 
 typedef struct s_stack

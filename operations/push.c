@@ -6,11 +6,11 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:53:04 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 08:07:31 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 09:28:23 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../include/push_swap.h"
 
 static int	push(t_stack **stack_src, t_stack **stack_dst)
 {

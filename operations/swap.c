@@ -6,11 +6,11 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:55:55 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/23 10:29:32 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 09:28:12 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../include/push_swap.h"
 
 static int	swap(t_stack **stack)
 {

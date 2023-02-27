@@ -6,11 +6,11 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:03:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/26 15:22:40 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/27 09:27:56 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../include/push_swap.h"
 
 t_stack	*ft_lstnew(int value)
 {
