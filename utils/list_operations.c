@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:03:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 14:01:40 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/28 12:18:14 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,26 @@ t_stack	*ft_lstnew(int value)
 	return (new);
 }
 
-void	ft_listadd_front(t_stack **stack, t_stack *new)
+void	ft_listadd_front(t_stack **stack, t_stack *new_s)
 {
-	new->next = *stack;
-	*stack = new;
+	new_s->next = *stack;
+	*stack = new_s;
 }
 
-void	ft_listadd_back(t_stack **stack, t_stack *new)
+void	ft_listadd_back(t_stack **stack, t_stack *new_s)
 {
 	t_stack	*tmp;
 
-	if (!new)
+	if (!new_s)
 		return ;
 	if (*stack)
 	{
 		tmp = ft_lstlast(*stack);
-		tmp->next = new;
+		tmp->next = new_s;
 	}
 	else
 	{
-		*stack = new;
+		*stack = new_s;
 		(*stack)->next = NULL;
 	}
 }

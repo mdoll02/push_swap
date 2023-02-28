@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:43:03 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/28 09:12:39 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/02/28 15:18:27 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,19 @@ void	begin_sorting(t_stack **stack_a, t_stack **stack_b)
 	borders = get_borders(stack_a);
 	if (elements == 1)
 		return ;
+	if (is_sorted(stack_a) == true)
+	{
+		printf("already sorted stoopid :)\n");
+		return ;
+	}
 	if (elements == 2 && (*stack_a)->value < (*stack_a)->next->value)
 		sa(stack_a);
 	if (elements == 3)
 		sort_3(stack_a);
 	if (elements == 5)
 		sort_5(stack_a, stack_b, borders);
+	else
+		sort_stack(stack_a, stack_b);
 }
 
 void	sort_3(t_stack **stack)
@@ -65,25 +72,35 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b, int *border)
 	}
 }
 
-int	*get_borders(t_stack **stack)
+void	sort_stack(t_stack **a, t_stack **b)
 {
-	t_stack			*head;
-	int				max;
-	int				min;
-	static int		borders[2];
+	int	*border;
 
-	head = *stack;
-	max = head->value;
-	min = head->value;
-	while (head->next != NULL)
+	border = get_borders(a);
+	while (number_of_elements(a) != 0)
 	{
-		head = head->next;
-		if (head->value > max)
-			max = head->value;
-		if (head->value < min)
-			min = head->value;
+		if ((*a)->value == border[MIN])
+		{
+			pb(b, a);
+			border = get_borders(a);
+		}
+		else
+			ra(a);
 	}
-	borders[MIN] = min;
-	borders[MAX] = max;
-	return (borders);
 }
+
+// while (is_sorted(a) == false)
+	// {
+		// median = get_median(a);
+		// pb(b, a);
+		// while (number_of_elements(a) != 0)
+		// {
+		// 	if ((*a)->value < median)
+		// 	{
+		// 		pb(b, a);
+		// 		rb(b);
+		// 	}
+		// 	else
+		// 		pb(b, a);
+		// }
+	// }
