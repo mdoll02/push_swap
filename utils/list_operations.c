@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:03:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/28 12:18:14 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/01 09:33:00 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_stack	*ft_lstnew(int value)
 	if (!new)
 		return (NULL);
 	new->value = value;
-	new->index = 1;
 	new->next = NULL;
 	return (new);
 }

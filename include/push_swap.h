@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/28 14:42:02 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/01 11:26:09 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@
 typedef struct s_stack
 {
 	int				value;
-	int				index;
 	struct s_stack	*next;
 }		t_stack;
 
@@ -66,9 +65,12 @@ void	pb(t_stack **stack_b, t_stack **stack_a);
 void	begin_sorting(t_stack **stack_a, t_stack **stack_b);
 void	sort_3(t_stack **stack);
 void	sort_5(t_stack **stack_a, t_stack **stack_b, int *border);
-void	sort_stack(t_stack **a, t_stack **b);
+void	push_to_b(t_stack **a, t_stack **b);
 int		*get_borders(t_stack **stack);
 bool	is_sorted(t_stack **stack);
-int		get_median(t_stack **stack);
+int		get_median(t_stack **stack, int max);
+void	sort_high(t_stack **a, t_stack **b);
+void	sort_low(t_stack **a, t_stack **b);
+int		get_pos(t_stack **stack, int value);
 
 #endif
