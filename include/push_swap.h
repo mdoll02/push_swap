@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/01 11:26:09 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/02 08:39:27 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	sort_3(t_stack **stack);
 void	sort_5(t_stack **stack_a, t_stack **stack_b, int *border);
 void	push_to_b(t_stack **a, t_stack **b);
 int		*get_borders(t_stack **stack);
-bool	is_sorted(t_stack **stack);
+bool	is_sorted(t_stack **stack, int value);
 int		get_median(t_stack **stack, int max);
 void	sort_high(t_stack **a, t_stack **b);
 void	sort_low(t_stack **a, t_stack **b);

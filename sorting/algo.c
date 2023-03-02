@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 11:09:33 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/01 16:13:38 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/02 09:44:40 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,11 @@ void	sort_high(t_stack **a, t_stack **b)
 	int	i;
 
 	i = 0;
-	while (number_of_elements(a) < number_of_elements(b))
+	while (number_of_elements(b) > 0)
 	{
-		pa(a, b);
-		if (is_sorted(a) == false)
+		if (is_sorted(a, (*b)->value) == false)
 		{
-			pb(b, a);
 			pos = get_pos(a, (*b)->value);
-			print_stack(*a);
-			printf("pos: %d nb: %d elem: %d\n", pos, (*b)->value, number_of_elements(a));
 			while (i < pos - 1)
 			{
 				ra(a);
@@ -38,13 +34,10 @@ void	sort_high(t_stack **a, t_stack **b)
 				rra(a);
 				i--;
 			}
-			print_stack(*a);
-			printf("----------\n");
 		}
+		else
+			pa(a, b);
 	}
-	print_stack(*a);
-	printf("----------\n");
-	print_stack(*b);
 }
 
 void	sort_low(t_stack **a, t_stack **b)

@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:29:23 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/01 15:58:38 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/02 09:43:59 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	*get_borders(t_stack **stack)
 	return (borders);
 }
 
-bool	is_sorted(t_stack **stack)
+bool	is_sorted(t_stack **stack, int value)
 {
 	t_stack	*head;
 	int		tmp;
@@ -45,6 +45,8 @@ bool	is_sorted(t_stack **stack)
 	if (*stack == NULL)
 		return (false);
 	head = *stack;
+	if (head->value < value)
+		return (false);
 	while (head->next != NULL)
 	{
 		tmp = head->value;
@@ -57,9 +59,9 @@ bool	is_sorted(t_stack **stack)
 
 int	get_median(t_stack **stack, int max)
 {
-	t_stack	*head;
-	int		median;
-	int		count;
+	t_stack		*head;
+	long long	median;
+	int			count;
 
 	if (*stack == NULL)
 		return (0);
@@ -74,7 +76,7 @@ int	get_median(t_stack **stack, int max)
 	}
 	if (median != 0)
 		median /= number_of_elements(stack);
-	return (median);
+	return ((int)median);
 }
 
 int	get_pos(t_stack **stack, int value)
@@ -84,16 +86,16 @@ int	get_pos(t_stack **stack, int value)
 
 	if (*stack == NULL)
 		return (0);
-	index = 0;
+	index = 1;
 	head = *stack;
 	while (head->next != NULL)
 	{
-		index++;
 		if (head->value > value)
 			return (index);
+		index++;
 		head = head->next;
 	}
-	// if (head->value != value)
-	// 	return (-1);
+	if (head->value < value)
+		index++;
 	return (index);
 }
