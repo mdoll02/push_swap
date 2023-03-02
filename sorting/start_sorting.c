@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:43:03 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/02 09:46:59 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/02 10:01:03 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,5 @@ void	push_to_b(t_stack **a, t_stack **b)
 	pa(a, b);
 	if ((*a)->value > (*a)->next->value)
 		sa(a);
-	sort_high(a, b);
+	sort(a, b);
 }
