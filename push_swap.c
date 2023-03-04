@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/04 08:10:45 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/04 10:38:04 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	fill_stack(stack_a, argv, argc);
 	begin_sorting(stack_a, stack_b);
-	// print_stack(*stack_a);
-	// write(1, "---\n", 4);
-	// print_stack(*stack_b);
 	return (0);
 }
 

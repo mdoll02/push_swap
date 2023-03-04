@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:43:03 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/04 09:07:18 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/04 12:10:05 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void	begin_sorting(t_stack **stack_a, t_stack **stack_b)
 		printf("already sorted stoopid :)\n");
 		return ;
 	}
-	if (elements == 2 && (*stack_a)->value < (*stack_a)->next->value)
+	if (elements == 2)
 		sa(stack_a);
-	if (elements == 3)
+	else if (elements == 3)
 		sort_3(stack_a);
-	if (elements == 5)
+	else if (elements == 5)
 		sort_5(stack_a, stack_b, borders);
 	else
 		push_to_b(stack_a, stack_b);
