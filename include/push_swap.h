@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/02 09:59:57 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/04 08:31:50 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void	sort(t_stack **a, t_stack **b);
 void	sort_from_bottom(t_stack **a, t_stack **b);
 void	sort_from_top(t_stack **a, t_stack **b);
 int		get_pos(t_stack **stack, int value);
+int		get_last_element(t_stack **stack);
 
 #endif
