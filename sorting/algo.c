@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 11:09:33 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/04 13:07:19 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/06 11:14:24 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	sort(t_stack **a, t_stack **b)
 				if ((*b)->next->value > (*b)->value)
 					sb(b);
 			}
+			// if ((*a)->value < (*b)->value)
+			// 	rb(b);
 			if (get_pos(a, (*b)->value) <= number_of_elements(a) / 2)
 				sort_from_top(a, b);
 			else
@@ -46,7 +48,7 @@ void	sort_from_top(t_stack **a, t_stack **b)
 		i++;
 	}
 	pa(a, b);
-	while (i-- > 0)
+	while (i-- > 0 && get_pos(a, (*b)->value) > number_of_elements(a) / 2)
 	{
 		if (*b)
 		{

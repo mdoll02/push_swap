@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:43:03 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/04 12:36:47 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/06 11:10:00 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	push_to_b(t_stack **a, t_stack **b)
 
 	median = get_median(a, number_of_elements(a));
 	pb(b, a);
-	while (number_of_elements(a) != 0)
+	while (number_of_elements(a) > 3)
 	{
 		if ((*a)->value < median)
 		{
@@ -88,9 +88,10 @@ void	push_to_b(t_stack **a, t_stack **b)
 		else
 			pb(b, a);
 	}
-	pa(a, b);
-	pa(a, b);
-	if ((*a)->value > (*a)->next->value)
-		sa(a);
+	// pa(a, b);
+	// pa(a, b);
+	// if ((*a)->value > (*a)->next->value)
+	// 	sa(a);
+	sort_3(a);
 	sort(a, b);
 }
