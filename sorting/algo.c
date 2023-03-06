@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 11:09:33 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/06 11:14:24 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/06 15:45:46 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	sort(t_stack **a, t_stack **b)
 		{
 			if ((*b)->next != NULL)
 			{
-				if ((*b)->next->value > (*b)->value)
+				if (get_pos(a, (*b)->value) <= get_pos(a, (*b)->next->value))
 					sb(b);
+				if (get_pos(a, (*b)->value) <= get_pos(a, last_elem(b)))
+					rrb(b);
 			}
-			// if ((*a)->value < (*b)->value)
-			// 	rb(b);
-			if (get_pos(a, (*b)->value) <= number_of_elements(a) / 2)
+			if (get_pos(a, (*b)->value) < number_of_elements(a) / 2)
 				sort_from_top(a, b);
 			else
 				sort_from_bottom(a, b);
@@ -48,14 +48,14 @@ void	sort_from_top(t_stack **a, t_stack **b)
 		i++;
 	}
 	pa(a, b);
-	while (i-- > 0 && get_pos(a, (*b)->value) > number_of_elements(a) / 2)
+	while (i-- > 0)
 	{
 		if (*b)
 		{
 			if ((*b)->value < (*a)->value && last_elem(a) < (*b)->value)
+			{
 				pa(a, b);
-			else if ((*b)->value > (*a)->value && last_elem(a) > (*b)->value)
-				pa(a, b);
+			}
 		}
 		rra(a);
 	}
@@ -83,8 +83,6 @@ void	sort_from_bottom(t_stack **a, t_stack **b)
 				pa(a, b);
 				i++;
 			}
-			if ((*b)->value > (*a)->value && last_elem(a) > (*b)->value)
-				pa(a, b);
 		}
 		ra(a);
 	}
