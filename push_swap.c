@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/04 10:38:04 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/06 08:19:54 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ int	main(int argc, char **argv)
 	}
 	stack_a = (t_stack **)malloc(sizeof(t_stack));
 	stack_b = (t_stack **)malloc(sizeof(t_stack));
+	if (!stack_a || !stack_b)
+		return ;
 	*stack_a = NULL;
 	*stack_b = NULL;
 	fill_stack(stack_a, argv, argc);
 	begin_sorting(stack_a, stack_b);
+	ft_free(stack_a);
+	ft_free(stack_b);
 	return (0);
 }
 
@@ -72,4 +76,22 @@ void	print_stack(t_stack *stack)
 			tmp = tmp->next;
 		}
 	}
+}
+
+void	ft_free(t_stack **stack)
+{
+	t_stack	*head;
+
+	if (!*stack)
+	{
+		free(stack);
+		return ;
+	}
+	while ((*stack)->next != NULL)
+	{
+		head = (*stack)->next;
+		free(*stack);
+		*stack = head;
+	}
+	free(stack);
 }

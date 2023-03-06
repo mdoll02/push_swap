@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/04 10:27:45 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/06 08:05:05 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_stack
 }		t_stack;
 
 void	print_stack(t_stack *stack);
+
+void	ft_free(t_stack **stack);
 
 int		check_input(char **argv, int argc);
 
