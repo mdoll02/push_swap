@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/06 08:05:05 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/07 08:53:42 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 }		t_stack;
 
-void	print_stack(t_stack *stack);
-
 void	ft_free(t_stack **stack);
-
 int		check_input(char **argv, int argc);
 
+void	print_stack(t_stack *stack);
 void	fill_stack(t_stack **stack, char **argv, int argc);
 
 t_stack	*ft_lstnew(int value);
@@ -51,12 +49,10 @@ int		ss(t_stack **stack_a, t_stack **stack_b);
 int		sb(t_stack **stack_b);
 int		sa(t_stack **stack_a);
 
-// NEED TO ADD ERROR HANDLING
 int		ra(t_stack **stack);
 int		rb(t_stack **stack);
 int		rr(t_stack **stack_a, t_stack **stack_b);
 
-// NEED TO ADD ERROR HANDLING
 int		rra(t_stack **stack);
 int		rrb(t_stack **stack);
 int		rrr(t_stack **stack_a, t_stack **stack_b);
