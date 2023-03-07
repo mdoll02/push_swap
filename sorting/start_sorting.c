@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:43:03 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/07 15:10:10 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/07 16:31:25 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	begin_sorting(t_stack **stack_a, t_stack **stack_b)
 	else if (elements == 5)
 		sort_5(stack_a, stack_b, borders);
 	else
-		push_to_b(stack_a, stack_b);
+		radix(stack_a, stack_b);
 }
 
 void	sort_3(t_stack **stack)

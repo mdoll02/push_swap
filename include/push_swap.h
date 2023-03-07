@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/07 09:39:27 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/07 16:34:48 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ void	sort_from_bottom(t_stack **a, t_stack **b);
 void	sort_from_top(t_stack **a, t_stack **b);
 int		get_pos(t_stack **stack, int value);
 int		last_elem(t_stack **stack);
+
+void	radix(t_stack **a, t_stack **b);
 
 #endif

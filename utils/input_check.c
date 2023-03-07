@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:50:06 by mdoll             #+#    #+#             */
-/*   Updated: 2023/02/27 11:43:49 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/07 16:11:42 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ static int	check_for_number(char **numbers, int argc)
 	}
 	return (0);
 }
-
-// need to check for right oder
 
 int	check_input(char **argv, int argc)
 {
