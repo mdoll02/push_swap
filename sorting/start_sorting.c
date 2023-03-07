@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:43:03 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/07 09:08:49 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/07 09:39:16 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,26 +49,26 @@ void	sort_3(t_stack **stack)
 		sa(stack);
 }
 
-void	sort_5(t_stack **stack_a, t_stack **stack_b, int *border)
+void	sort_5(t_stack **a, t_stack **b, int *border)
 {
-	while (number_of_elements(stack_b) < 2)
+	while (number_of_elements(b) < 2)
 	{
-		if ((*stack_a)->value == border[MIN] || \
-			(*stack_a)->value == border[MAX])
-			pb(stack_b, stack_a);
+		if ((*a)->value == border[MIN] || \
+			(*a)->value == border[MAX])
+			pb(b, a);
 		else
-			ra(stack_a);
+			ra(a);
 	}
-	sort_3(stack_a);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
-	border = get_borders(stack_a);
-	if ((*stack_a)->value == border[MAX])
-		ra(stack_a);
+	sort_3(a);
+	pa(a, b);
+	pa(a, b);
+	border = get_borders(a);
+	if ((*a)->value == border[MAX])
+		ra(a);
 	else
 	{
-		sa(stack_a);
-		ra(stack_a);
+		sa(a);
+		ra(a);
 	}
 }
 
@@ -88,10 +88,6 @@ void	push_to_b(t_stack **a, t_stack **b)
 		else
 			pb(b, a);
 	}
-	// pa(a, b);
-	// pa(a, b);
-	// if ((*a)->value > (*a)->next->value)
-	// 	sa(a);
 	sort_3(a);
 	sort(a, b);
 }
