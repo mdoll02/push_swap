@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:29:23 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/04 10:58:16 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/07 13:25:17 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	get_pos(t_stack **stack, int value)
 	head = *stack;
 	while (head->next != NULL)
 	{
-		if (head->value > value)
+		if (head->value >= value)
 			return (index);
 		index++;
 		head = head->next;

@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 11:09:33 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/07 13:08:43 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/07 14:36:59 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,11 @@ void	sort_from_bottom(t_stack **a, t_stack **b)
 	}
 	pa(a, b);
 	while (i-- >= 0)
-	{
+	{	
 		if (number_of_elements(b) >= 2)
 		{
+			if ((*b)->value < (*b)->next->value)
+				sb(b);
 			if ((*b)->value > (*a)->value && (*b)->value < (*a)->next->value)
 			{
 				pa(a, b);
@@ -89,8 +91,6 @@ void	sort_from_bottom(t_stack **a, t_stack **b)
 				pa(a, b);
 				i++;
 			}
-			if ((*b)->value < (*b)->next->value)
-				sb(b);
 		}
 		ra(a);
 	}
