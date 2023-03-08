@@ -40,6 +40,30 @@ int	*build_array(char **argv, int argc, int *len)
 	return (ret);
 }
 
+int	*replace_numbers(int *input, int *sorted, int len)
+{
+	int	index;
+    int	j;
+
+	sorted = bubble_sort(sorted, len);
+	index = 0;
+	while (index < len)
+	{
+		j = 0;
+		while (j < len)
+		{
+			if (input[index] == sorted[j])
+			{
+				input[index] = j;
+				break ;
+			}
+			j++;
+		}
+		index++;
+	}
+	return (input);
+}
+
 int	*bubble_sort(int *array, int len)
 {
 	int			i;
