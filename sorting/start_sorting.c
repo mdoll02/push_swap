@@ -23,7 +23,6 @@ void	begin_sorting(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	if (is_sorted(stack_a, (*stack_a)->value) == true)
 	{
-		printf("already sorted stoopid :)\n");
 		ft_free(stack_a);
 		ft_free(stack_b);
 		exit(0);
