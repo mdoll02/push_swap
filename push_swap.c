@@ -38,7 +38,6 @@ int	main(int argc, char **argv)
 void	fill_stack(t_stack **stack, int argc, char **argv)
 {
 	int		index;
-	int		j;
 	t_stack	*new;
 	t_array	array;
 
@@ -53,22 +52,7 @@ void	fill_stack(t_stack **stack, int argc, char **argv)
 			free(array.input);
 		exit (1);
 	}
-	array.sorted = bubble_sort(array.sorted, array.len);
-	index = 0;
-	while (index < array.len)
-	{
-		j = 0;
-		while (j < array.len)
-		{
-			if (array.input[index] == array.sorted[j])
-			{
-				array.input[index] = j;
-				break ;
-			}
-			j++;
-		}
-		index++;
-	}
+	array.input = replace_numbers(array.input, array.sorted, array.len);
 	index = 0;
 	while (index < array.len)
 	{
