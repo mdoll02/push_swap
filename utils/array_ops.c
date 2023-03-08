@@ -30,7 +30,7 @@ int	*build_array(char **argv, int argc, int *len)
 	}
 	else
 		numbers++;
-	ret = (int *)malloc(sizeof(int) * (*len - 1));
+	ret = (int *)malloc(sizeof(int) * (*len));
 	if (!ret)
 		return (NULL);
 	while (++index < *len)
