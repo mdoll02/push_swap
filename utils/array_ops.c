@@ -34,7 +34,7 @@ int	*build_array(char **argv, int argc, int *len)
 	if (!ret)
 		return (NULL);
 	while (++index < *len - shift)
-		ret[index] = ft_atoi(numbers[index + shift]);
+		ret[index] = (int) ft_atoi(numbers[index + shift]);
 	if (argc == 2)
 		free (numbers);
 	return (ret);
