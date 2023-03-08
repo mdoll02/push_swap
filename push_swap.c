@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/07 16:16:14 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/08 12:44:28 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,36 +27,35 @@ int	main(int argc, char **argv)
 	if (!stack_a || !stack_b)
 		return (1);
 	*stack_a = NULL;
+	fill_stack(stack_a, argc, argv);
 	*stack_b = NULL;
-	fill_stack(stack_a, argv, argc);
 	begin_sorting(stack_a, stack_b);
 	ft_free(stack_a);
 	ft_free(stack_b);
 	return (0);
 }
 
-void	fill_stack(t_stack **stack, char **argv, int argc)
+void	fill_stack(t_stack **stack, int argc, char **argv)
 {
-	char	**numbers;
 	int		index;
+	int		j;
 	t_stack	*new;
+	t_array	array;
 
+	array.sorted = NULL;
+	array.sorted = build_array(argv, argc, &array);
+	array.input = build_array(argv, argc, &array);
+	bubble_sort(array.sorted, array.len);
 	index = 0;
-	if (argc == 2)
-		numbers = ft_split(argv[1], ' ');
-	else
+	while (array.input[index])
 	{
-		index = 1;
-		numbers = argv;
-	}
-	while (numbers[index])
-	{
-		new = ft_lstnew(ft_atoi(numbers[index]));
+		j = 0;
+		while (array.input[index] != array.sorted[j])
+			j++;
+		new = ft_lstnew(j);
 		ft_listadd_back(stack, new);
 		index++;
 	}
-	if (argc == 2)
-		free(numbers);
 }
 
 void	print_stack(t_stack *stack)

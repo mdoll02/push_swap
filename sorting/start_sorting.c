@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 10:43:03 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/07 16:31:25 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/08 12:45:17 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,23 +74,31 @@ void	sort_5(t_stack **a, t_stack **b, int *border)
 	}
 }
 
-void	push_to_b(t_stack **a, t_stack **b)
+void	radix(t_stack **a, t_stack **b)
 {
-	int	median;
+	int	*bo;
+	int	bits;
+	int	i;
+	int	j;
 
-	median = get_median(a, number_of_elements(a));
-	pb(b, a);
-	while (number_of_elements(a) > 3)
+	bits = 0;
+	bo = get_borders(a);
+	while (bo[MAX] >> bits != 0)
+		bits++;
+	i = 0;
+	while (i < bits)
 	{
-		if ((*a)->value < median)
+		j = 0;
+		while (j <= bo[MAX] && is_sorted(a, (*a)->value) == false)
 		{
-			pb(b, a);
-			rb(b);
+			if ((((*a)->value >> i) & 1) == 1)
+				ra(a);
+			else
+				pb(b, a);
+			j++;
 		}
-		else
-			pb(b, a);
-		pb(b, a);
+		i++;
+		while (*b != NULL)
+			pa(a, b);
 	}
-	sort_3(a);
-	sort(a, b);
 }

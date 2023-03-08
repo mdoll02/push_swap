@@ -6,7 +6,7 @@
 #    By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 09:27:16 by mdoll             #+#    #+#              #
-#    Updated: 2023/03/07 15:24:26 by mdoll            ###   ########.fr        #
+#    Updated: 2023/03/08 09:49:00 by mdoll            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,9 @@ OPS		:= operations/
 SORT	:= sorting/
 
 SRCS	:=	push_swap.c \
-			$(UTILS)list_operations.c $(UTILS)input_check.c \
+			$(UTILS)list_operations.c $(UTILS)input_check.c $(UTILS)array_ops.c\
 			$(OPS)swap.c $(OPS)rotate.c $(OPS)reverse_rotate.c $(OPS)push.c \
-			$(SORT)start_sorting.c $(SORT)sorting_utils.c $(SORT)algo.c $(SORT)radix.c
-
+			$(SORT)start_sorting.c $(SORT)sorting_utils.c
 OBJS	:= $(SRCS:.c=.o)
 
 NORM	:= $(shell norminette | grep Error | grep c:)

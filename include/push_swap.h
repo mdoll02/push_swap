@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/07 16:34:48 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/08 12:17:19 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,21 @@ typedef struct s_stack
 	struct s_stack	*next;
 }		t_stack;
 
+typedef struct s_array
+{
+	int	*input;
+	int	*sorted;
+	int	len;
+}		t_array;
+
 void	ft_free(t_stack **stack);
 int		check_input(char **argv, int argc);
 
 void	print_stack(t_stack *stack);
-void	fill_stack(t_stack **stack, char **argv, int argc);
+void	fill_stack(t_stack **stack, int argc, char **argv);
+int		*build_array(char **argv, int argc, t_array *array);
+int		*build_sorted_array(char **argv, int argc);
+void	bubble_sort(int *array, int len);
 
 t_stack	*ft_lstnew(int value);
 void	ft_listadd_back(t_stack **stack, t_stack *new_s);
@@ -63,16 +73,8 @@ void	pb(t_stack **stack_b, t_stack **stack_a);
 void	begin_sorting(t_stack **stack_a, t_stack **stack_b);
 void	sort_3(t_stack **stack);
 void	sort_5(t_stack **stack_a, t_stack **stack_b, int *border);
-void	push_to_b(t_stack **a, t_stack **b);
 int		*get_borders(t_stack **stack);
 bool	is_sorted(t_stack **stack, int value);
-int		get_median(t_stack **stack, int max);
-void	sort(t_stack **a, t_stack **b);
-void	sort_from_bottom(t_stack **a, t_stack **b);
-void	sort_from_top(t_stack **a, t_stack **b);
-int		get_pos(t_stack **stack, int value);
-int		last_elem(t_stack **stack);
-
 void	radix(t_stack **a, t_stack **b);
 
 #endif
