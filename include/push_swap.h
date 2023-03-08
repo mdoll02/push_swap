@@ -47,7 +47,7 @@ void	print_stack(t_stack *stack);
 void	fill_stack(t_stack **stack, int argc, char **argv);
 int		*build_array(char **argv, int argc, int *len);
 int		*build_sorted_array(char **argv, int argc);
-void	bubble_sort(int *array, int len);
+int		*bubble_sort(int *array, int len);
 
 t_stack	*ft_lstnew(int value);
 void	ft_listadd_back(t_stack **stack, t_stack *new_s);
