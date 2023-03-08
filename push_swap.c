@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/08 12:44:28 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/08 14:14:36 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,26 @@ void	fill_stack(t_stack **stack, int argc, char **argv)
 
 	array.sorted = build_array(argv, argc, &array.len);
 	array.input = build_array(argv, argc, &array.len);
-	bubble_sort(array.sorted, array.len);
+	array.sorted = bubble_sort(array.sorted, array.len);
 	index = 0;
-	while (array.input[index])
+	while (index < array.len)
 	{
 		j = 0;
-		while (array.input[index] != array.sorted[j])
+		while (j < array.len)
+		{
+			if (array.input[index] == array.sorted[j])
+			{
+				array.input[index] = j;
+				break ;
+			}
 			j++;
-		new = ft_lstnew(j);
+		}
+		index++;
+	}
+	index = 0;
+	while (index < array.len)
+	{
+		new = ft_lstnew(array.input[index]);
 		ft_listadd_back(stack, new);
 		index++;
 	}
