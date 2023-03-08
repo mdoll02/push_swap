@@ -6,13 +6,13 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 09:49:10 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/08 12:43:53 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/08 13:54:04 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	*build_array(char **argv, int argc, t_array *array)
+int	*build_array(char **argv, int argc, int *len)
 {
 	int		index;
 	int		shift;
@@ -20,20 +20,20 @@ int	*build_array(char **argv, int argc, t_array *array)
 	char	**numbers;
 
 	index = -1;
-	array->len = argc;
+	*len = argc;
 	shift = 1;
 	numbers = argv;
 	if (argc == 2)
 	{
 		numbers = ft_split(numbers[1], ' ');
-		array->len = 0;
-		while (numbers[++array->len])
-		shift = 0;
+		*len = 0;
+		while (numbers[++*len])
+			shift = 0;
 	}
-	ret = (int *)malloc(sizeof(int) * (array->len - 1));
+	ret = (int *)malloc(sizeof(int) * (*len - 1));
 	if (!ret)
 		return (NULL);
-	while (++index < array->len - shift)
+	while (++index < *len - shift)
 		ret[index] = ft_atoi(numbers[index + shift]);
 	if (argc == 2)
 		free (numbers);

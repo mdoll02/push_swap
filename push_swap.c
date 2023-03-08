@@ -42,9 +42,8 @@ void	fill_stack(t_stack **stack, int argc, char **argv)
 	t_stack	*new;
 	t_array	array;
 
-	array.sorted = NULL;
-	array.sorted = build_array(argv, argc, &array);
-	array.input = build_array(argv, argc, &array);
+	array.sorted = build_array(argv, argc, &array.len);
+	array.input = build_array(argv, argc, &array.len);
 	bubble_sort(array.sorted, array.len);
 	index = 0;
 	while (array.input[index])
