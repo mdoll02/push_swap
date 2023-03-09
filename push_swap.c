@@ -69,25 +69,6 @@ int	fill_stack(t_stack **stack, int argc, char **argv)
 	return (0);
 }
 
-void	print_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	if (tmp == NULL)
-		ft_putendl_fd("(NULL)", 1);
-	else
-	{
-		while (tmp)
-		{
-			write(1, "|", 1);
-			ft_putnbr_fd(tmp->value, 1);
-			write(1, "|\n", 2);
-			tmp = tmp->next;
-		}
-	}
-}
-
 void	ft_free(t_stack **stack)
 {
 	t_stack	*head;

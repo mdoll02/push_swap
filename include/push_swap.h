@@ -79,6 +79,5 @@ int		rra(t_stack **stack);
 int		ss(t_stack **stack_a, t_stack **stack_b);
 int		sb(t_stack **stack_b);
 int		sa(t_stack **stack_a);
-void	print_stack(t_stack *stack);
 
 #endif
