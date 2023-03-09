@@ -49,25 +49,25 @@ all:	${NAME}
 	@ $(CC) -c $(CFLAGS) $< -o ${<:.c=.o}
 
 $(NAME): $(OBJS)
-	@ echo -e "${r}compiling Libft${end}"
+	@ echo "${r}compiling Libft${end}"
 	@ make all -C ./libft >/dev/null 2>&1
 	@ cp ./libft/libft.a .
-	@ echo -e "${bl}compiling program${end}"
+	@ echo "${bl}compiling program${end}"
 	@ $(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft.a
-	@ echo -e "${g}finished compiling.${end}"
-	@ echo -e "${bl}Use: ./push_swap 1 2 3 4 ... or \"1 2 3 4 ...\" to run the program${end}"
-	@ echo -e "Norm error in: ${r}" $(NORM) "${end}"
+	@ echo "${g}finished compiling.${end}"
+	@ echo "${bl}Use: ./push_swap 1 2 3 4 ... or \"1 2 3 4 ...\" to run the program${end}"
+	@ echo "Norm error in: ${r}" $(NORM) "${end}"
 
 clean:
 	@${RM} $(OBJS)
 	@make clean -C ./libft
-	@ echo -e "${y}cl${bl}ea${p}ne${c}d!${end}"
+	@ echo "${y}cl${bl}ea${p}ne${c}d!${end}"
 
 fclean:
 	@ ${RM} ${NAME}
 	@ make fclean -C ./libft
 	@ ${RM} libft.a
-	@ echo -e "${y}eve${bl}ryt${p}hi${c}ng${end}"
+	@ echo "${y}eve${bl}ryt${p}hi${c}ng${end}"
 	@ make clean
 
 re:			fclean all
