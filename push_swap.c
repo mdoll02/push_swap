@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:13:31 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/09 10:11:05 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/09 11:02:28 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,23 @@ int	main(int argc, char **argv)
 	stack_a = (t_stack **)malloc(sizeof(t_stack));
 	stack_b = (t_stack **)malloc(sizeof(t_stack));
 	if (!stack_a || !stack_b)
+	{
+		if (stack_a)
+			free(stack_a);
+		if (stack_b)
+			free(stack_b);
 		return (1);
+	}
 	*stack_a = NULL;
-	fill_stack(stack_a, argc, argv);
 	*stack_b = NULL;
-	begin_sorting(stack_a, stack_b);
+	if (fill_stack(stack_a, argc, argv) != 1)
+		begin_sorting(stack_a, stack_b);
 	ft_free(stack_a);
 	ft_free(stack_b);
 	return (0);
 }
 
-void	fill_stack(t_stack **stack, int argc, char **argv)
+int	fill_stack(t_stack **stack, int argc, char **argv)
 {
 	int		index;
 	t_stack	*new;
@@ -45,12 +51,11 @@ void	fill_stack(t_stack **stack, int argc, char **argv)
 	array.input = build_array(argv, argc, &array.len);
 	if (!array.input || !array.sorted)
 	{
-		ft_free(stack);
 		if (array.sorted)
 			free(array.sorted);
 		if (array.input)
 			free(array.input);
-		exit (1);
+		return (1);
 	}
 	array.input = replace_numbers(array.input, array.sorted, array.len);
 	index = 0;
@@ -62,6 +67,7 @@ void	fill_stack(t_stack **stack, int argc, char **argv)
 	}
 	free(array.input);
 	free(array.sorted);
+	return (0);
 }
 
 void	print_stack(t_stack *stack)

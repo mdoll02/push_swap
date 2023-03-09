@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:03:36 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/09 10:32:47 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/09 11:02:34 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_free(t_stack **stack);
 int		check_input(char **argv, int argc);
 
 void	print_stack(t_stack *stack);
-void	fill_stack(t_stack **stack, int argc, char **argv);
+int		fill_stack(t_stack **stack, int argc, char **argv);
 int		*build_array(char **argv, int argc, int *len);
 int		*build_sorted_array(char **argv, int argc);
 int		*bubble_sort(int *array, int len);
