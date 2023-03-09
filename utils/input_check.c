@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include <stdint.h>
 
 static int	is_valid_number(char *number)
 {
