@@ -58,12 +58,13 @@ int	fill_stack(t_stack **stack, int argc, char **argv)
 		return (1);
 	}
 	array.input = replace_numbers(array.input, array.sorted, array.len);
-	index = 0;
-	while (index < array.len)
+	index = -1;
+	while (++index < array.len)
 	{
 		new = ft_lstnew(array.input[index]);
+		if (!new)
+			return (1);
 		ft_listadd_back(stack, new);
-		index++;
 	}
 	free(array.input);
 	return (0);

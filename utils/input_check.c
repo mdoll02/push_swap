@@ -88,6 +88,8 @@ int	check_input(char **argv, int argc)
 	if (argc == 2)
 	{
 		numbers = ft_split(argv[1], ' ');
+		if (!numbers)
+			return (1);
 	}
 	else
 		numbers = argv;
