@@ -6,7 +6,7 @@
 #    By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 09:27:16 by mdoll             #+#    #+#              #
-#    Updated: 2023/03/09 12:48:52 by kx               ###   ########.fr        #
+#    Updated: 2023/03/09 12:48:52 by mdoll            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(NAME): $(OBJS)
 	@ $(ECHO) "${bl}compiling program${end}"
 	@ $(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft.a
 	@ $(ECHO) "${g}finished compiling.${end}"
-	@ $(ECHO) "${bl}Use: ./push_swap 1 2 3 4 ... or \"1 2 3 4 ...\" to run the program${end}"
+	@ $(ECHO) "${bl}Use: ./push_swap 3 5 1 7 9 ... or \"3 5 1 7 9 ...\" to run the program${end}"
 	@ $(ECHO) "Norm error in: ${r}" $(NORM) "${end}"
 
 clean:
