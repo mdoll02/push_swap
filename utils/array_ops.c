@@ -6,7 +6,7 @@
 /*   By: mdoll <mdoll@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 09:49:10 by mdoll             #+#    #+#             */
-/*   Updated: 2023/03/08 14:39:09 by mdoll            ###   ########.fr       */
+/*   Updated: 2023/03/09 10:11:25 by mdoll            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	*build_array(char **argv, int argc, int *len)
 int	*replace_numbers(int *input, int *sorted, int len)
 {
 	int	index;
-    int	j;
+	int	j;
 
 	sorted = bubble_sort(sorted, len);
 	index = 0;
