@@ -61,6 +61,7 @@ int	*replace_numbers(int *input, int *sorted, int len)
 		}
 		index++;
 	}
+	free(sorted);
 	return (input);
 }
 

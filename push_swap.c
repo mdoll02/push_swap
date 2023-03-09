@@ -66,7 +66,6 @@ int	fill_stack(t_stack **stack, int argc, char **argv)
 		index++;
 	}
 	free(array.input);
-	free(array.sorted);
 	return (0);
 }
 
