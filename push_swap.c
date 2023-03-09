@@ -85,5 +85,6 @@ void	ft_free(t_stack **stack)
 		free(*stack);
 		*stack = head;
 	}
+	free(*stack);
 	free(stack);
 }
